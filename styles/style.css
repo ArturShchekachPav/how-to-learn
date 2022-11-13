@@ -17,6 +17,7 @@
   display: flex;
   background-color: #f2f2f2;
   z-index: -3;
+  overflow: hidden;
 
   /* выше установили ограничения для секции */
 }
@@ -24,6 +25,9 @@
 .logo {
   width: 228px;
   height: 32px;
+}
+
+.logo_place_header {
   position: absolute;
   top: 30px;
   left: 64px;
@@ -161,6 +165,18 @@
   font-weight: normal;
 }
 
+.section-title_theme_dark {
+  color: white;
+}
+
+.section-subtitle_theme_dark {
+  color: white;
+}
+
+.table__heading_theme_dark {
+
+}
+
 /* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
   width: 200px;
@@ -204,6 +220,56 @@
   font-weight: normal;
 }
 
+.kaufman {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  padding: 90px 0;
+  z-index: -2;
+}
 
+.kaufman__triangle {
+  position: absolute;
+  right: -210px;
+  top: 0;
+  height: 877px;
+  width: 877px;
+  z-index: -1;
+}
 
+.footer {
+  background-color: #000;
+  color: white;
+  position: relative;
+}
 
+.footer__columns {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  min-height: 350px;
+  padding: 60px 0 40px 0;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__column_copyright {
+  justify-content: space-between;
+  flex-basis: 711px;
+}
+
+.footer__author {
+  margin: 18px 0;
+}
+
+.footer__column-heading {
+  margin-bottom: 20px;
+}
+
+.footer__column-links {
+  margin-bottom: 16px;
+}
