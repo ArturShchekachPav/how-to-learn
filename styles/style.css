@@ -1,11 +1,7 @@
 .page {
   min-width: 1100px;
-  /* мы ещё не умеем делать мобильную версию сайта, */
-  /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
-  /* выше установили ограничение по максимальной ширине */
   margin: 0 auto;
-  /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -18,8 +14,7 @@
   background-color: #f2f2f2;
   z-index: -3;
   overflow: hidden;
-
-  /* выше установили ограничения для секции */
+  box-sizing: border-box;
 }
 
 .logo {
@@ -31,6 +26,11 @@
   position: absolute;
   top: 30px;
   left: 64px;
+  background-image: url(../images/logo_place_header.svg);
+}
+
+.logo_place_footer {
+  background-image: url(../images/logo_place_footer.svg);
 }
 
 .header__title {
@@ -49,7 +49,7 @@
   left: 64px;
   line-height: 25px;
   font-size: 18px;
-  font-weight: normal;
+  margin: 0;
 }
 
 .header__link {
@@ -66,7 +66,6 @@
   z-index: -1;
 }
 
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 .header__square-pic {
   height: 568px;
   width: 568px;
@@ -80,6 +79,10 @@
 .description {
   display: flex;
   justify-content: center;
+}
+
+/* создан для добавления отступов секциям, не добавляя их напрямую в селектор блока, так как это противоречет БЭМ */
+.section-margin_l {
   margin: 100px 0;
 }
 
@@ -95,38 +98,38 @@
   font-size: 18px;
   font-weight: normal;
   color: #2f80ed;
+  margin: 0;
 }
 
 .two-columns__main-text {
   width: 80%;
   min-width: 784px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .two-columns__paragraph {
   line-height: 34px;
   font-size: 24px;
-  font-weight: normal;
-}
-
-.two-columns__paragraph + .two-columns__paragraph {
-  margin-top: 30px;
 }
 
 .two-columns__span-accent {
   font-weight: 600;
 }
 
-.digits {
-  margin-bottom: 100px;
-}
-
 .section-title {
   width: 60%;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 auto;
   line-height: 1.15;
   font-size: 60px;
   font-weight: 600;
+}
+
+/* создан для добавления отступов секциям, не добавляя их напрямую в селектор блока, так как это противоречет БЭМ */
+.section-title_margin_m {
+  margin-bottom: 20px;
 }
 
 .section-subtitle {
@@ -134,7 +137,7 @@
   text-align: center;
   line-height: 34px;
   font-size: 24px;
-  font-weight: normal;
+  margin: 0 auto;
 }
 
 .table {
@@ -142,27 +145,30 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  list-style: none;
   margin: 0 auto;
+  padding: 0;
 }
 
 .table__cell {
   width: 250px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   margin-top: 60px;
+  gap: 20px;
 }
 
 .table__heading {
   line-height: 1.15;
   font-size: 24px;
   font-weight: 600;
+  margin: 0;
 }
 
 .table__text {
   line-height: 1.2;
   font-size: 18px;
-  font-weight: normal;
+  margin: 0;
 }
 
 .section-title_theme_dark {
@@ -173,14 +179,12 @@
   color: white;
 }
 
-.table__heading_theme_dark {
-
+.table_theme_dark {
+  color: white;
 }
 
-/* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
   width: 200px;
-  color: white;
   margin-right: 0;
   margin-top: 80px;
 }
@@ -192,6 +196,9 @@
   background-position: bottom left;
   background-size: 867px 637px;
   position: relative;
+  background-color: #f2f2f2;
+  padding-top: 100px;
+  box-sizing: border-box;
 }
 
 .feynman__title {
@@ -200,13 +207,14 @@
   line-height: 1.15;
   font-size: 120px;
   font-weight: 600;
+  margin: 0 auto 70px auto;
 }
 
 .feynman_subtitle {
   text-align: center;
   line-height: 51px;
   font-size: 36px;
-  font-weight: normal;
+  margin: 0;
 }
 
 .feynman__link {
@@ -217,15 +225,15 @@
   color: #2f80ed;
   line-height: 51px;
   font-size: 36px;
-  font-weight: normal;
 }
 
 .kaufman {
   position: relative;
   overflow: hidden;
-  background-color: #000;
+  background-color: #1f1f1f;
   padding: 90px 0;
   z-index: -2;
+  box-sizing: border-box;
 }
 
 .kaufman__triangle {
@@ -238,9 +246,14 @@
 }
 
 .footer {
-  background-color: #000;
+  background-color: #1f1f1f;
   color: white;
   position: relative;
+  min-height: 350px;
+  display: flex;
+  padding: 60px 0 40px 0;
+  box-sizing: border-box;
+
 }
 
 .footer__columns {
@@ -248,8 +261,6 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  min-height: 350px;
-  padding: 60px 0 40px 0;
 }
 
 .footer__column {
@@ -264,12 +275,34 @@
 
 .footer__author {
   margin: 18px 0;
+  line-height: 25px;
+  font-size: 18px;
 }
 
 .footer__column-heading {
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .footer__column-links {
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
+  list-style: none;
+  padding: 0;
+}
+
+.footer__column-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+.footer__social-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
 }
