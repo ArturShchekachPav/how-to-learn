@@ -1,11 +1,6 @@
 .resources__link {
   display: flex;
   width: 270px;
-  transition: opacity 0.3s ease-in;
   justify-content: center;
   align-items: center;
-}
-
-.resources__link:hover {
-  opacity: 0.6;
 }
