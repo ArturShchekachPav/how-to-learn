@@ -1,0 +1,19 @@
+.form__item {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #f2f2f2;
+  width: 100%;
+}
+
+.form__item:focus {
+  outline: none;
+  background: rgba(107, 96, 70, 0.6);
+}
+
+.form__item::placeholder {
+  font-size: 14px;
+}

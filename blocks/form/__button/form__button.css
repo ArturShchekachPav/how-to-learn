@@ -1,0 +1,19 @@
+.form__button {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px #cd8e8e;
+  transition: padding 0.4s linear;
+}
+
+.form__button:hover {
+  cursor: pointer;
+  background-color: #fff8f8;
+}
+
+.form__button:active {
+  padding: 8px;
+}
